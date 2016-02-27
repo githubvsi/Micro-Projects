@@ -9,11 +9,18 @@ function delayMoving(){
 }
 
 function beginMoving(){
-	//document.getElementById('main').querySelector('img').style.position = 'absolute';
-	document.getElementById('main').querySelector('img').style.top = '50px';
-	document.getElementById('main').querySelector('img').style.left = '0';
+	// Set the starting position of the imaging
+	var image = document.getElementById('main').querySelector('img');
+	image.style.top = '50px';
+	image.style.left = '0';
 
+	// Start moving
 	intervalHandle_1 = setInterval(moveUnit, 50);
+
+	// Stop the image when click on it
+	image.onclick = function(){
+		clearInterval(intervalHandle_1);
+	}
 }
 
 function moveUnit(){
