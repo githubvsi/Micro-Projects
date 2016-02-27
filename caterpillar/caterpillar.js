@@ -21,6 +21,7 @@ function moveUnit(){
 	document.getElementById('main').querySelector('img').style.left = start+'px';
 	if(start===660 || start===0){
 		speed = -speed;	
+		document.getElementById('main').querySelector('img').classList.toggle('flip');
 	}
 }
 
